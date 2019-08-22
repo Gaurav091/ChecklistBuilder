@@ -5,13 +5,15 @@ import { CreateQuestionComponent } from '../create-question/create-question.comp
 import { QuestionSettingsComponent } from '../question-settings/question-settings.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatTabsModule } from '@angular/material';
+import { QuestionListComponent } from '../question-list/question-list.component';
 
 
 
 @NgModule({
   declarations: [ChecklistBuilderComponent,
                   CreateQuestionComponent,
-                  QuestionSettingsComponent],
+                  QuestionSettingsComponent,
+                  QuestionListComponent],
   imports: [NgbModule, MatTabsModule]
 })
 export class ChecklistBuilderModule {}

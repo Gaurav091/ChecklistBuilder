@@ -1,0 +1,14 @@
+<div class="panel panel-info">
+    <div class="panel-heading">Questions</div>
+    <div class="panel-body">
+        <div class="row" *ngFor="let q of questions" style="border: 1px solid gray; padding: 5px; margin-bottom: 5px;">
+            {{q.questionText}}<span *ngIf="q.isRequired" style="color: red">*</span>
+            <div *ngFor="let c of q.controls">
+                <input *ngIf="c.controlType == 1" type="checkbox">
+                <input *ngIf="c.controlType == 2" type="textbox">
+                {{c.label}} 
+            </div>
+
+        </div>
+    </div>
+</div>

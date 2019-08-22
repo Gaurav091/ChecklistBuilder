@@ -1,6 +1,6 @@
 <h3>CheckList Builder</h3>
 
-<div>
+<div class="row">
     <!-- <ul class="nav nav-pills">
       <li><a href="#">Question Type</a>
         <app-create-question></app-create-question>
@@ -9,8 +9,14 @@
         <app-question-settings></app-question-settings>
       </li>
     </ul> -->
-    <mat-tab-group>
-        <mat-tab label="Question Type"> <app-create-question></app-create-question> </mat-tab>
-        <mat-tab label="Settings">  <app-question-settings></app-question-settings> </mat-tab>
-    </mat-tab-group>
+    <div class="col-lg-4">
+      <mat-tab-group>
+              <mat-tab label="Question Type"> <app-create-question></app-create-question> </mat-tab>
+              <mat-tab label="Settings">  <app-question-settings></app-question-settings> </mat-tab>
+          </mat-tab-group>
+    </div>
+    <div class="col-lg-8">
+      <app-question-list></app-question-list>
+    </div>
+
 </div>
