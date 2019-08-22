@@ -1,32 +1,35 @@
 <!-- <p>add-checklist-template works!</p> -->
 
-  <h1>Add CheckList Template</h1>
-  <!-- <div class="col-md-6 inline">
-    <span>Template Name </span>
-    <input type="text">
-  </div>
-  <div class="col-md-6">
-    <span>Work Type </span>
-    <input type="text">
-  </div> -->
-
-  <div class="row">
+  <h3>Add CheckList Template</h3>
+  <div class="addCheckList" >
     <div class="col-md-6">
       <div class="input-group">
         <span class="input-group-addon">
-          <input type="checkbox" aria-label="...">
+          Template Name
         </span>
-        <input type="text" class="form-control" aria-label="...">
-      </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
+        <input type="text" class="form-control" aria-label="..." placeholder="Checklist for Client 1">
+      </div>
+    </div>
     <div class="col-md-6">
       <div class="input-group">
         <span class="input-group-addon">
-          <input type="radio" aria-label="...">
+          Work Type
         </span>
-        <input type="text" class="form-control" aria-label="...">
-      </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            PM <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Energy Management</a></li>
+            <li><a href="#">Inspection</a></li>
+            <li><a href="#">Natural Disaster</a></li>
+            <li><a href="#">Storage Solution</a></li>
+            <li><a href="#">Winter Storm</a></li>
+            <li><a href="#">PM</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
 
