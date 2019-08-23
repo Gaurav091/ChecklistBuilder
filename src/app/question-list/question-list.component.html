@@ -1,14 +1,30 @@
 <div class="panel panel-info">
     <div class="panel-heading">Questions</div>
     <div class="panel-body">
-        <div class="row" *ngFor="let q of questions" style="border: 1px solid gray; padding: 5px; margin-bottom: 5px;">
-            {{q.questionText}}<span *ngIf="q.isRequired" style="color: red">*</span>
-            <div *ngFor="let c of q.controls">
-                <input *ngIf="c.controlType == 1" type="checkbox">
-                <input *ngIf="c.controlType == 2" type="textbox">
-                {{c.label}} 
+        <div class="row" *ngFor="let q of questions; let i = index" style="border: 1px solid gray; padding: 5px; margin-bottom: 5px;">
+            <div class="form-group col-lg-4">
+                <label> {{q.questionText}}<span *ngIf="q.isRequired" style="color: red">*</span></label> 
+                <div *ngFor="let c of q.controls">
+                    
+                    <input *ngIf="c.controlType == 1" type="checkbox">
+                    <input *ngIf="c.controlType == 2" class="form-control" type="textbox">
+                    <input *ngIf="c.controlType == 3" type="radio">
+                    <select class="form-control" *ngIf="c.controlType == 4">
+                        <option value="item.value" *ngFor="let item of c.items">{{item.text}}</option>
+                    </select>
+                    <input *ngIf="c.controlType == 5" type="text" value="" class="form-control" type="text">
+                    <input *ngIf="c.controlType == 6" type="text" value="" class="form-control" type="file">
+                    {{c.label}} 
+                </div>
             </div>
-
+            <div class="row">
+                    <div class="col-lg-10"></div>
+                    <div class="col-lg-2">
+                        <input type="button" (click)="copyQuestion(q)" class="" value="copy">
+                        <input type="button" (click)="deleteQuestion(i)" value="delete">
+                    </div>
+            </div>
         </div>
     </div>
+   
 </div>
