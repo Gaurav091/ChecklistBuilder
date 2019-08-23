@@ -6,7 +6,8 @@ import { QuestionSettingsComponent } from '../question-settings/question-setting
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatTabsModule } from '@angular/material';
 import { QuestionListComponent } from '../question-list/question-list.component';
-
+import { MaterialModule } from '.././material-module';
+import {MatFormFieldModule} from '@angular/material/form-field'
 
 
 @NgModule({
@@ -14,6 +15,6 @@ import { QuestionListComponent } from '../question-list/question-list.component'
                   CreateQuestionComponent,
                   QuestionSettingsComponent,
                   QuestionListComponent],
-  imports: [NgbModule, MatTabsModule]
+  imports: [NgbModule, MatTabsModule, MaterialModule, MatFormFieldModule]
 })
 export class ChecklistBuilderModule {}

@@ -1,12 +1,74 @@
 <div>
   <h3>CheckList Builder</h3>
   <div class="col-lg-4">
-    <mat-tab-group>
+    <mat-tab-group [(selectedIndex)]="selected.value" (selectedTabChange)="tabChanged($event)">
       <mat-tab label="Question Type">
-        <app-create-question></app-create-question>
+        <!-- <app-create-question></app-create-question> -->
+        <div >
+
+            <div class="col-lg-6 btn-group-vertical">
+              <button (click)="changeTab(1)" type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span> Paragraph Text
+              </button>
+              <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span> Radio Button
+              </button>
+              <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span> File Attach
+              </button>
+              <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span> Single Line Text
+              </button>
+
+            </div>
+            <div class="col-lg-6 btn-group-vertical">
+              <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span> Checkbox
+              </button>
+              <button  type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span> Dropdown
+              </button>
+              <button  type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span> Calandar
+              </button>
+              <button  type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span> Number
+              </button>
+              <button  type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span> Terms and Acknowledge
+              </button>
+            </div>
+          </div>
       </mat-tab>
       <mat-tab label="Settings">
-        <app-question-settings></app-question-settings>
+        <!-- <app-question-settings></app-question-settings> -->
+        <div class="questionSettings">
+            <form [formGroup] = "questionForm" (submit)="login(questionForm.value)" >
+              <div >
+                <label for="textarea">Question</label>
+                <input formControlName="questionText" placeholder="Type your Question" type="text" class="form-control" id="text">
+              </div>
+              <div>
+                  <label for="dropdown">Response Type</label>
+                  <select formControlName="questionControl" class="form-control">
+                      <option value="1">Checkbox</option>
+                      <option value="2">Textbox</option>
+                      <option value="3">Radio</option>
+                      <option value="4">Dropdown</option>
+                      <option value="5">Calander</option>
+                      <option value="6">Attachment</option>
+                      <option value="7">Number</option>
+                  </select>
+              </div>
+              <div>
+
+              </div>
+              <div class="checkbox">
+                <label><input formControlName="required" type="checkbox"> Required</label>
+              </div>
+              <button type="submit" class="btn btn-default">Create</button>
+            </form>
+        </div>
       </mat-tab>
     </mat-tab-group>
   </div>
