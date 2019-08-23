@@ -1,1 +1,28 @@
-<p>question-settings works!</p>
+<div class="questionSettings">
+    <form action="/action_page.php">
+      <div class="form-group">
+        <label for="textarea">Question</label>
+        <input placeholder="Type your Question" type="text" class="form-control" id="text">
+      </div>
+      <div class="form-group">
+          <label for="dropdown">Response Type</label>
+          <div class="dropdown">
+              <button class="btn  dropdown-toggle" type="button" data-toggle="dropdown">Select
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Checkbox</a></li>
+                <li><a href="#">Radio Button</a></li>
+                <li><a href="#">Dropdown</a></li>
+                <li><a href="#">Attachment</a></li>
+                <li><a href="#">Text</a></li>
+                <li><a href="#">Number</a></li>
+                <li><a href="#">Calandar</a></li>
+              </ul>
+            </div>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox"> Required</label>
+      </div>
+      <button type="submit" class="btn btn-default">Create</button>
+    </form>
+</div>

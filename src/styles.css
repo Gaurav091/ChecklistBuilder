@@ -4,10 +4,49 @@
 
 .addCheckList {
   border: 1px solid;
-    padding-top: 3%;
-    margin: 1%;
-    padding-bottom: 5%;
+  padding-top: 3%;
+  margin: 1%;
+  padding-bottom: 5%;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* .mat-tab-header-pagination.mat-tab-header-pagination-disabled {
+  display: none !important;
+} */
+
+.mat-tab-label {
+  width: 25%;
+  min-width: 0 !important;
+  margin: auto;
+}
+
+.mat-tab-body-content {
+  overflow: hidden !important;
+}
+
+.createButton {
+  float: right;
+    margin: 3%;
+}
+
+.questionSettings {
+  margin-left: 3%;
+}
+
+.questionSettingsCheckBox {
+  margin-top: 5%;
+}
+
+.btn.btn-default{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
