@@ -69,6 +69,9 @@ export class QuestionListComponent implements OnInit {
   }
   copyQuestion(q: Question) {
     APC.questions.push(q);
+    window.requestAnimationFrame( () => {
+      scrollTo(0, document.body.scrollHeight);
+    });
   }
   deleteQuestion(i) {
     // alert('delete index' + i);
