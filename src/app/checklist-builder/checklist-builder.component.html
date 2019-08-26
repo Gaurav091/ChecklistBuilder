@@ -10,31 +10,31 @@
               <button (click)="changeTab(1)" type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-search"></span> Paragraph Text
               </button>
-              <button type="button" class="btn btn-default">
+              <button (click)="changeTab(2)" type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-search"></span> Radio Button
               </button>
-              <button type="button" class="btn btn-default">
+              <button (click)="changeTab(3)" type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-search"></span> File Attach
               </button>
-              <button type="button" class="btn btn-default">
+              <button (click)="changeTab(4)" type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-search"></span> Single Line Text
               </button>
 
             </div>
             <div class="col-lg-6 btn-group-vertical">
-              <button type="button" class="btn btn-default">
+              <button (click)="changeTab(5)" type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-search"></span> Checkbox
               </button>
-              <button  type="button" class="btn btn-default">
+              <button (click)="changeTab(6)"  type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-search"></span> Dropdown
               </button>
-              <button  type="button" class="btn btn-default">
+              <button (click)="changeTab(7)"  type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-search"></span> Calandar
               </button>
-              <button  type="button" class="btn btn-default">
+              <button (click)="changeTab(8)"  type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-search"></span> Number
               </button>
-              <button  type="button" class="btn btn-default">
+              <button (click)="changeTab(9)"  type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-search"></span> Terms and Acknowledge
               </button>
             </div>
@@ -50,17 +50,22 @@
               </div>
               <div>
                   <label for="dropdown">Response Type</label>
-                  <select formControlName="questionControl" class="form-control">
-                      <option value="1">Checkbox</option>
-                      <option value="2">Textbox</option>
-                      <option value="3">Radio</option>
-                      <option value="4">Dropdown</option>
-                      <option value="5">Calander</option>
-                      <option value="6">Attachment</option>
-                      <option value="7">Number</option>
+                  <select formControlName="questionControl" [selectedIndex]="selectedQues" class="form-control">
+                      <option value="1">Paragraph Text</option>
+                      <option value="2">Radio</option>
+                      <option value="3">File Attach</option>
+                      <option value="4">Single Line Text</option>
+                      <option value="5">Checkbox</option>
+                      <option value="6">Dropdown</option>
+                      <option value="7">Calandar</option>
+                      <option value="8">Number</option>
+                      <option value="9">Terms and Acknowledge</option>
                   </select>
               </div>
               <div>
+              <div>
+                Response Type
+              </div>
 
               </div>
               <div class="checkbox">

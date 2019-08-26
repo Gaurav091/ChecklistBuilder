@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateQuestionComponent } from '../create-question/create-question.component';
-import { QuestionSettingsComponent } from '../question-settings/question-settings.component';
 import {
   FormGroup,
   FormBuilder,
@@ -24,7 +22,7 @@ export class ChecklistBuilderComponent implements OnInit {
   questionForm: FormGroup;
   selectedIndex: number;
   selected = new FormControl(0);
-  selectedQues: string;
+  selectedQues: any;
 
   constructor(private fb: FormBuilder) {
   }
@@ -62,8 +60,8 @@ export class ChecklistBuilderComponent implements OnInit {
 
 changeTab(buttonValue) {
   this.selected.setValue(this.selected.value + 1);
-  this.selectedQues = buttonValue;
-  console.log(this.selected.value);
+  this.selectedQues = buttonValue - 1;
+  console.log(this.selectedQues);
 }
 
   public previousStep() {

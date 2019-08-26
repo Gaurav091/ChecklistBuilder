@@ -10,13 +10,8 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './material-module';
 
-// import { ChecklistBuilderModule } from './checklist-builder/checklist-builder.module';
-// import { AddChecklistTemplateModule } from './add-checklist-template/add-checklist.module';
-
 import { AddChecklistTemplateComponent } from './add-checklist-template/add-checklist-template.component';
 import { ChecklistBuilderComponent } from './checklist-builder/checklist-builder.component';
-import { CreateQuestionComponent } from './create-question/create-question.component';
-import { QuestionSettingsComponent } from './question-settings/question-settings.component';
 import { QuestionListComponent } from './question-list/question-list.component';
 
 @NgModule({
@@ -24,8 +19,6 @@ import { QuestionListComponent } from './question-list/question-list.component';
     AppComponent,
      AddChecklistTemplateComponent,
      ChecklistBuilderComponent,
-     CreateQuestionComponent,
-     QuestionSettingsComponent,
      QuestionListComponent
   ],
   imports: [
@@ -39,8 +32,6 @@ import { QuestionListComponent } from './question-list/question-list.component';
     MaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule
-    // ChecklistBuilderModule,
-    // AddChecklistTemplateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
