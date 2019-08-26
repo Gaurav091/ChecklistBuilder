@@ -85,7 +85,7 @@ changeTab(questionType) {
     this.question.controls.push(c1);
   }
   deleteControl(i) {
-    if ( i > 0 ) {
+    if ( this.question.controls.length > 1 ) {
     this.question.controls.splice(i, 1);
     }
   }
