@@ -70,9 +70,9 @@
                   <input *ngIf="c.controlType == 1" type="checkbox">
                   <input *ngIf="c.controlType == 2" class="form-control" type="textbox">
                   <input *ngIf="c.controlType == 3" type="radio">
-                  <select class="form-control" *ngIf="c.controlType == 4">
+                  <!-- <select class="form-control" *ngIf="c.controlType == 4">
                     <option value="item.value" *ngFor="let item of c.items">{{item.text}}</option>
-                  </select>
+                  </select> -->
                   <!-- <input *ngIf="c.controlType == 5" type="text" value="" class="form-control" type="text"> -->
                   <div *ngIf="c.controlType == 5" class="input-group">
                     <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
