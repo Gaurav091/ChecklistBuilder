@@ -64,9 +64,7 @@
               </select>
             </div>
             <div>
-              <div>
-                Response Type
-              </div>
+              <label for="dropdown">Response Items</label>
               <div class="row" *ngFor="let c of question.controls;let i=index">
                 <div class="col-lg-10">
                   <input *ngIf="c.controlType == 1" type="checkbox">
@@ -97,7 +95,7 @@
                   </div>
                   <input name="controlLabel" [(ngModel)]="question.controls[i].label" name="cLabel{{i}}"
                     *ngIf="c.controlType == 1 || c.controlType == 3 || c.controlType == 4" type="text" value=""
-                    class="form-control" placeholder="Label/Item">
+                    class="form-control responseItems" placeholder="Label/Item">
                 </div>
                 <div class="col-lg-2">
                   <button type="button" (click)="copyControl(c)" class="btn btn-xs btn-default">

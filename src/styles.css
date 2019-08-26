@@ -40,6 +40,10 @@
   margin-top: 2%;
   margin-bottom: 2%;
 }
+.responseItems {
+  margin-left: 4% !important;
+  margin-top: -4% !important;
+}
 
 html,
 body {
