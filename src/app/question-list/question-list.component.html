@@ -35,6 +35,16 @@
             </div>
             <input *ngIf="c.controlType == 6" type="text" value="" class="form-control" type="file">
             <input *ngIf="c.controlType == 7" type="text" value="" class="form-control" type="number">
+            <textarea *ngIf="c.controlType == 8" value="" class="form-control"></textarea>
+            <div *ngIf="c.controlType == 9">
+              <input type="text" value="" class="form-control" type="file">
+              <ul>
+                <li>Please upload only the standard file formats.</li>
+                <li>Large file will take more time to upload.</li>
+                <li>Maximum file size is allowed 6mb.</li>
+              </ul>
+              <input type="checkbox"> I Agree
+            </div>
             {{c.label}}
           </div>
         </div>
