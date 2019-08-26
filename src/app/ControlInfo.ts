@@ -1,12 +1,14 @@
 export class ControlInfo {
-    constructor(controlType:number, label: string){
+    constructor(controlType: number, label: string) {
         this.controlType = controlType;
         this.label = label;
     }
     controlType: number;
     label: string;
-    items:SelectListItem[];
-    
+    items: SelectListItem[];
+    getItemCount() {
+       return this.items && this.items.length > 0 ? this.items.length : 0 ;
+    }
 }
 export class SelectListItem{
     constructor(text:string, value:string,isSelected:boolean){

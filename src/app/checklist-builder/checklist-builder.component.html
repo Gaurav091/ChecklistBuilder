@@ -64,15 +64,16 @@
               </select>
             </div>
             <div>
+              <hr>
               <label for="dropdown">Response Items</label>
-              <div class="row" *ngFor="let c of question.controls;let i=index">
-                <div class="col-lg-10">
+              <div class="row" *ngFor="let c of question.controls;let i=index" style="border-bottom: .5px solid gray;">
+                <div class="col-lg-9">
                   <input *ngIf="c.controlType == 1" type="checkbox">
                   <input *ngIf="c.controlType == 2" class="form-control" type="textbox">
                   <input *ngIf="c.controlType == 3" type="radio">
-                  <!-- <select class="form-control" *ngIf="c.controlType == 4">
+                  <select class="form-control" *ngIf="c.controlType == 4">
                     <option value="item.value" *ngFor="let item of c.items">{{item.text}}</option>
-                  </select> -->
+                  </select>
                   <!-- <input *ngIf="c.controlType == 5" type="text" value="" class="form-control" type="text"> -->
                   <div *ngIf="c.controlType == 5" class="input-group">
                     <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
@@ -94,10 +95,27 @@
                     <input type="checkbox"> I Agree
                   </div>
                   <input name="controlLabel" [(ngModel)]="question.controls[i].label" name="cLabel{{i}}"
-                    *ngIf="c.controlType == 1 || c.controlType == 3 || c.controlType == 4" type="text" value=""
-                    class="form-control responseItems" placeholder="Label/Item">
+                    *ngIf="c.controlType == 1 || c.controlType == 3" type="text" value=""
+                    class="form-control responseItems" placeholder="text">
+                 <div style="padding:5px;">
+                    <input *ngIf="(c.getItemCount() == 0)" type="button" class="btn btn-link" (click)="addFirstItem(c)" value="Add First Item">
+                    <div *ngFor="let item of c.items;let j=index" class="row" style="border:.5px dashed gray;padding:5px;">
+                        <div class="col-lg-8">
+                          <input type="text" name="cItem{{j}}" class="form-control" [(ngModel)]="item.text" placeholder="Dropdown item">
+                        </div>
+                        <div class="col-lg-4">
+                          <button type="button" (click)="copyItem(c, item)" class="btn btn-xs btn-info">
+                            <span class="glyphicon glyphicon-plus"></span>
+                          </button>
+                          <button type="button" (click)="deleteItem(c, j)" class="btn btn-xs btn-info">
+                            <span class="glyphicon glyphicon-minus"></span>
+                          </button>
+                        </div>
+    
+                      </div>
+                 </div>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-3">
                   <button type="button" (click)="copyControl(c)" class="btn btn-xs btn-default">
                     <span class="glyphicon glyphicon-plus"></span>
                   </button>
@@ -107,6 +125,7 @@
                 </div>
               </div>
             </div>
+            <hr>
             <div class="checkbox">
               <label><input name="isRequired" [(ngModel)]="question.isRequired" type="checkbox"> Required</label>
             </div>

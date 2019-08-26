@@ -9,7 +9,7 @@ import {
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import * as APC from '../appConstant';
 import { Question } from '../Question';
-import { ControlInfo } from '../controlInfo';
+import { ControlInfo, SelectListItem } from '../controlInfo';
 import { MatTabChangeEvent } from '@angular/material';
 
 
@@ -66,6 +66,10 @@ changeTab(questionType) {
   if (this.selectedQues) {
     this.question.controls = [];
     this.question.controls.push(new ControlInfo(this.selectedQues, ''));
+    // if (this.selectedQues == 4) {
+    //   this.question.controls[0].items = [];
+    //   this.question.controls[0].items.push(new SelectListItem('', '', false));
+    // }
   }
   console.log(this.question);
   console.log(this.selectedQues);
@@ -82,6 +86,11 @@ changeTab(questionType) {
   copyControl(c: ControlInfo) {
     console.log(c);
     const c1: ControlInfo = new ControlInfo(c.controlType, c.label);
+    if (c.controlType === 4) {
+      c1.items = [];
+      // c1.items.push(new SelectListItem('', '', false));
+    }
+
     this.question.controls.push(c1);
   }
   deleteControl(i) {
@@ -89,5 +98,19 @@ changeTab(questionType) {
     this.question.controls.splice(i, 1);
     }
   }
+  copyItem(c: ControlInfo, item: SelectListItem) {
+    console.log(item);
+    const item1: SelectListItem = new SelectListItem(item.text, item.value, item.isSelected);
+    c.items.push(item1);
+  }
+  deleteItem(c: ControlInfo, j) {
+     if (c.items.length > 1 ) {
+      c.items.splice(j, 1);
+    }
+  }
+  addFirstItem(c: ControlInfo) {
+      c.items = [];
+      c.items.push(new SelectListItem('', '', false));
+    }
 
-}
+  }
