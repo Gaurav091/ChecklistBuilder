@@ -46,8 +46,8 @@
           <form name="questionForm" #f="ngForm" (ngSubmit)="createQuestion(questionForm)">
             <div>
               <label for="textarea">Question</label>
-              <input name="questionText" [(ngModel)]="question.questionText" placeholder="Type your Question" type="text" class="form-control"
-                id="text">
+              <input name="questionText" [(ngModel)]="question.questionText" placeholder="Type your Question"
+                type="text" class="form-control" id="text">
             </div>
             <div>
               <label for="dropdown">Response Type</label>
@@ -85,7 +85,18 @@
                   </div>
                   <input *ngIf="c.controlType == 6" type="text" value="" class="form-control" type="file">
                   <input *ngIf="c.controlType == 7" type="text" value="" class="form-control" type="number">
-                  <input name="controlLabel" [(ngModel)]="question.controls[i].label" name="cLabel{{i}}" *ngIf="c.controlType == 1 || c.controlType == 3 || c.controlType == 4" type="text" value=""
+                  <textarea *ngIf="c.controlType == 8" value="" class="form-control"></textarea>
+                  <div *ngIf="c.controlType == 9">
+                    <input type="text" value="" class="form-control" type="file">
+                    <ul>
+                      <li>Please upload only the standard file formats.</li>
+                      <li>Large file will take more time to upload.</li>
+                      <li>Maximum file size is allowed 6mb.</li>
+                    </ul>
+                    <input type="checkbox"> I Agree
+                  </div>
+                  <input name="controlLabel" [(ngModel)]="question.controls[i].label" name="cLabel{{i}}"
+                    *ngIf="c.controlType == 1 || c.controlType == 3 || c.controlType == 4" type="text" value=""
                     class="form-control" placeholder="Label/Item">
                 </div>
                 <div class="col-lg-2">
