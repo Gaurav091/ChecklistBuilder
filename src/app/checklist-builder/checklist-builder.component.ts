@@ -23,7 +23,8 @@ export class ChecklistBuilderComponent implements OnInit {
   // selectedIndex: number;
   // selected = new FormControl(0);
   tabIndex = 0;
-  selectedQues: any;
+  buttonType = 1;
+  // selectedQues: any;
   question: Question = new Question();
 
   constructor(private fb: FormBuilder) {
@@ -61,27 +62,30 @@ export class ChecklistBuilderComponent implements OnInit {
 changeTab(questionType) {
   // this.selected.setValue(this.selected.value + 1);
   this.tabIndex += 1;
-  this.selectedQues = questionType;
-  console.log(this.selectedQues);
-  if (this.selectedQues) {
+  this.question.questionType = questionType;
+  console.log( this.question.questionType);
+  if ( this.question.questionType) {
     this.question.controls = [];
-    this.question.controls.push(new ControlInfo(this.selectedQues, ''));
+    this.question.controls.push(new ControlInfo( this.question.questionType, ''));
+    this.buttonType = 1 ;
     // if (this.selectedQues == 4) {
     //   this.question.controls[0].items = [];
     //   this.question.controls[0].items.push(new SelectListItem('', '', false));
     // }
   }
   console.log(this.question);
-  console.log(this.selectedQues);
+  console.log( this.question.questionType);
 }
 
   createQuestion(value) {
     console.log(value);
+    this.question.id = Math.random();
     APC.questions.unshift(this.question);
     console.log(this.question);
     this.question = new Question();
-    this.selectedQues = '';
+    this.question.questionType = -1;
     this.tabIndex = 0;
+
   }
   copyControl(c: ControlInfo) {
     console.log(c);
@@ -113,14 +117,31 @@ changeTab(questionType) {
       c.items.push(new SelectListItem('', '', false));
     }
     questionTypeChange($event) {
-      if (this.selectedQues) {
+      if ( this.question.questionType) {
         this.question.controls = [];
-        this.question.controls.push(new ControlInfo(this.selectedQues, ''));
+        this.question.controls.push(new ControlInfo( this.question.questionType, ''));
         // if (this.selectedQues == 4) {
         //   this.question.controls[0].items = [];
         //   this.question.controls[0].items.push(new SelectListItem('', '', false));
         // }
       }
+    }
+
+    populateQuestion(q: Question) {
+      this.question = q;
+      this.tabIndex = 1;
+      this.buttonType = 2;
+
+    }
+
+    updateQuestion() {
+    const i =  APC.questions.findIndex(s => s.id === this.question.id);
+    APC.questions[i] = this.question;
+    console.log(this.question);
+    this.question = new Question();
+    this.question.questionType = -1;
+    this.tabIndex = 0;
+    this.buttonType = 1;
     }
 
   }

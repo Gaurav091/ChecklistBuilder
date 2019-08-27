@@ -36,6 +36,14 @@
   margin-top: 5%;
 }
 
+.questionStyles {
+  cursor: pointer;
+
+}
+.questionStyles :hover{
+  background-color: aliceblue;
+}
+
 .btn.btn-default{
   margin-top: 2%;
   margin-bottom: 2%;
@@ -43,6 +51,10 @@
 .responseItems {
   margin-left: 6% !important;
   margin-top: -5% !important;
+}
+.mat-tab-label-active {
+  background: orange;
+  color: white;
 }
 
 html,

@@ -7,4 +7,12 @@ export class Question{
     questionText: string;
     isRequired: boolean;
     controls: ControlInfo[];
+    questionType: number;
+    setData(q: Question) {
+      this.id = q.id;
+      this.questionText = q.questionText;
+      this.isRequired = q.isRequired;
+      this.controls = q.controls;
+      this.questionType = q.questionType;
+    }
 }

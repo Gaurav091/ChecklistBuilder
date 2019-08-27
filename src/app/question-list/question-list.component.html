@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading" style="font-size: 18px;">Questions</div>
   <div class="panel-body">
-    <div class="row" *ngFor="let q of questions; let i = index"
+    <div class="questionStyles row" (click)="editQuestion(q)" *ngFor="let q of questions; let i = index"
       style="border: 1px solid gray; padding: 5px; margin-bottom: 5px;">
       <div id="i">
         <div>
@@ -15,7 +15,7 @@
             </button>
           </div>
         </div>
-        <div class="form-group col-lg-4">
+        <div  class="form-group col-lg-4">
           <label> {{q.questionText}}<span *ngIf="q.isRequired" style="color: red">*</span></label>
           <div *ngFor="let c of q.controls">
 
@@ -49,10 +49,10 @@
         <div class="row">
           <div class="col-lg-10"></div>
           <div class="col-lg-2">
-            <button type="button" (click)="copyQuestion(q)" class="btn btn-xs btn-default">
+            <button type="button" (click)="copyQuestion(q);  $event.stopPropagation()" class="btn btn-xs btn-default">
               <span class="glyphicon glyphicon-plus"></span>
             </button>
-            <button type="button" (click)="deleteQuestion(i)" class="btn btn-xs btn-default">
+            <button type="button" (click)="deleteQuestion(i);  $event.stopPropagation()" class="btn btn-xs btn-default">
               <span class="glyphicon glyphicon-minus"></span>
             </button>
           </div>

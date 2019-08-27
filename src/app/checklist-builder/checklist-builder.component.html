@@ -1,7 +1,7 @@
 <div>
   <h3>CheckList Builder</h3>
-  <div class="col-lg-4">
-    <mat-tab-group [(selectedIndex)]="tabIndex" (selectedTabChange)="tabChanged($event)">
+  <div  class="col-lg-4">
+    <mat-tab-group [(selectedIndex)]="tabIndex"  (selectedTabChange)="tabChanged($event)">
       <mat-tab label="Question Type">
         <div>
           <div class="col-lg-6 btn-group-vertical">
@@ -47,7 +47,7 @@
             </div>
             <div>
               <label for="dropdown">Response Type</label>
-              <select name="selectedQuestionType" [(ngModel)]="selectedQues" (change)="questionTypeChange($event)" class="form-control">
+              <select name="selectedQuestionType" [(ngModel)]="question.questionType" (change)="questionTypeChange($event)" class="form-control">
                 <option value="8">Paragraph Text</option>
                 <option value="3">Radio</option>
                 <option value="6">File Attach</option>
@@ -125,13 +125,14 @@
             <div class="checkbox">
               <label><input name="isRequired" [(ngModel)]="question.isRequired" type="checkbox"> Required</label>
             </div>
-            <button type="submit" class="btn btn-default">Add</button>
+            <button *ngIf="buttonType === 1" type="submit" class="btn btn-default">Add</button>
+            <button *ngIf="buttonType === 2" type="button" (click)="updateQuestion()" class="btn btn-default">Update</button>
           </form>
         </div>
       </mat-tab>
     </mat-tab-group>
   </div>
   <div class="col-lg-8">
-    <app-question-list></app-question-list>
+    <app-question-list (updateQuestionEvent) = "populateQuestion($event)"></app-question-list>
   </div>
 </div>

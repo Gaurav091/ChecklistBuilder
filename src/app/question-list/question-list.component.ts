@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Question } from '../Question';
 import { ControlInfo, SelectListItem } from '../controlInfo';
 import * as APC from '../appConstant';
@@ -11,6 +11,7 @@ import { AppComponent } from '../app.component';
 })
 export class QuestionListComponent implements OnInit {
   questions: Question[] = APC.questions;
+  @Output() updateQuestionEvent = new EventEmitter<Question>();
   constructor() {
     // let q: Question = new Question();
     // q.id = 10;
@@ -73,11 +74,20 @@ export class QuestionListComponent implements OnInit {
   ngOnInit() {
     console.log(this.questions);
   }
+
+  editQuestion(q: Question) {
+    this.updateQuestionEvent.emit(q);
+  }
+
   copyQuestion(q: Question) {
-    APC.questions.unshift(q);
+    let tempQ = new Question();
+    tempQ.setData(q);
+    tempQ.id = Math.random();
+    APC.questions.unshift(tempQ);
     window.requestAnimationFrame(() => {
       scrollTo(0, 0);
     });
+
   }
   deleteQuestion(i) {
     // alert('delete index' + i);
