@@ -25,9 +25,8 @@
             <select class="form-control" *ngIf="c.controlType == 4">
               <option value="item.value" *ngFor="let item of c.items">{{item.text}}</option>
             </select>
-            <!-- <input *ngIf="c.controlType == 5" type="text" value="" class="form-control" type="text"> -->
             <div *ngIf="c.controlType == 5" class="input-group">
-              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
                 #d="ngbDatepicker">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
@@ -62,5 +61,4 @@
       </div>
     </div>
   </div>
-
 </div>

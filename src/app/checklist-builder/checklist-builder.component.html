@@ -3,9 +3,7 @@
   <div class="col-lg-4">
     <mat-tab-group [(selectedIndex)]="tabIndex" (selectedTabChange)="tabChanged($event)">
       <mat-tab label="Question Type">
-        <!-- <app-create-question></app-create-question> -->
         <div>
-
           <div class="col-lg-6 btn-group-vertical">
             <button (click)="changeTab(8)" type="button" class="btn btn-default">
               <span class="glyphicon glyphicon-search"></span> Paragraph Text
@@ -19,7 +17,6 @@
             <button (click)="changeTab(2)" type="button" class="btn btn-default">
               <span class="glyphicon glyphicon-search"></span> Single Line Text
             </button>
-
           </div>
           <div class="col-lg-6 btn-group-vertical">
             <button (click)="changeTab(1)" type="button" class="btn btn-default">
@@ -41,7 +38,6 @@
         </div>
       </mat-tab>
       <mat-tab label="Settings">
-        <!-- <app-question-settings></app-question-settings> -->
         <div class="questionSettings">
           <form name="questionForm" #f="ngForm" (ngSubmit)="createQuestion(f)">
             <div>
@@ -74,10 +70,8 @@
                   <select class="form-control" *ngIf="c.controlType == 4">
                     <option value="item.value" *ngFor="let item of c.items">{{item.text}}</option>
                   </select>
-                  <!-- <input *ngIf="c.controlType == 5" type="text" value="" class="form-control" type="text"> -->
                   <div *ngIf="c.controlType == 5" class="input-group">
-                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
-                      #d="ngbDatepicker">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker">
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
                     </div>
@@ -97,23 +91,25 @@
                   <input name="controlLabel" [(ngModel)]="question.controls[i].label" name="cLabel{{i}}"
                     *ngIf="c.controlType == 1 || c.controlType == 3" type="text" value=""
                     class="form-control responseItems" placeholder="text">
-                 <div style="padding:5px;">
-                    <input *ngIf="(c.controlType === 4) && (c.getItemCount() == 0)" type="button" class="btn btn-link" (click)="addFirstItem(c)" value="Add First Item">
-                    <div *ngFor="let item of c.items;let j=index" class="row" style="border:.5px dashed gray;padding:5px;">
-                        <div class="col-lg-8">
-                          <input type="text" name="cItem{{j}}" class="form-control" [(ngModel)]="item.text" placeholder="Dropdown item">
-                        </div>
-                        <div class="col-lg-4">
-                          <button type="button" (click)="copyItem(c, item)" class="btn btn-xs btn-info">
-                            <span class="glyphicon glyphicon-plus"></span>
-                          </button>
-                          <button type="button" (click)="deleteItem(c, j)" class="btn btn-xs btn-info">
-                            <span class="glyphicon glyphicon-minus"></span>
-                          </button>
-                        </div>
-
+                  <div style="padding:5px;">
+                    <input *ngIf="(c.controlType === 4) && (c.getItemCount() == 0)" type="button" class="btn btn-link"
+                      (click)="addFirstItem(c)" value="Add First Item">
+                    <div *ngFor="let item of c.items;let j=index" class="row"
+                      style="border:.5px dashed gray;padding:5px;">
+                      <div class="col-lg-8">
+                        <input type="text" name="cItem{{j}}{{i}}" class="form-control" [(ngModel)]="item.text"
+                          placeholder="Dropdown item">
                       </div>
-                 </div>
+                      <div class="col-lg-4">
+                        <button type="button" (click)="copyItem(c, item)" class="btn btn-xs btn-info">
+                          <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <button type="button" (click)="deleteItem(c, j)" class="btn btn-xs btn-info">
+                          <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="col-lg-3">
                   <button type="button" (click)="copyControl(c)" class="btn btn-xs btn-default">
@@ -129,7 +125,6 @@
             <div class="checkbox">
               <label><input name="isRequired" [(ngModel)]="question.isRequired" type="checkbox"> Required</label>
             </div>
-
             <button type="submit" class="btn btn-default">Create</button>
           </form>
         </div>
