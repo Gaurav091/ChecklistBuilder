@@ -12,7 +12,7 @@ import { AppComponent } from '../app.component';
 export class QuestionListComponent implements OnInit {
   questions: Question[] = APC.questions;
   constructor() {
-    let q: Question = new Question();
+    // let q: Question = new Question();
     // q.id = 10;
     // q.questionText = 'question 1';
     // q.isRequired = true;
