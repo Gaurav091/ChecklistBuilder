@@ -112,5 +112,15 @@ changeTab(questionType) {
       c.items = [];
       c.items.push(new SelectListItem('', '', false));
     }
+    questionTypeChange($event) {
+      if (this.selectedQues) {
+        this.question.controls = [];
+        this.question.controls.push(new ControlInfo(this.selectedQues, ''));
+        // if (this.selectedQues == 4) {
+        //   this.question.controls[0].items = [];
+        //   this.question.controls[0].items.push(new SelectListItem('', '', false));
+        // }
+      }
+    }
 
   }
