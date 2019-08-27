@@ -47,7 +47,7 @@
             </div>
             <div>
               <label for="dropdown">Response Type</label>
-              <select name="selectedQuestionType" [(ngModel)]="selectedQues" class="form-control">
+              <select name="selectedQuestionType" [(ngModel)]="selectedQues" (change)="questionTypeChange($event)" class="form-control">
                 <option value="8">Paragraph Text</option>
                 <option value="3">Radio</option>
                 <option value="6">File Attach</option>
