@@ -6,7 +6,7 @@
       <div id="i">
         <div>
           <div class="col-lg-10"></div>
-          <div class="col-lg-2">
+          <div class="col-lg-2" style="padding-left: 25px;">
             <button type="button" (click)="shiftUp(i)" class="btn btn-xs btn-default">
               <span class="glyphicon glyphicon-arrow-up"></span>
             </button>
@@ -26,8 +26,7 @@
               <option value="item.value" *ngFor="let item of c.items">{{item.text}}</option>
             </select>
             <div *ngIf="c.controlType == 5" class="input-group">
-              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
-                #d="ngbDatepicker">
+              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
               </div>
