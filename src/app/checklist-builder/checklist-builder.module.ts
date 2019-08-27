@@ -13,6 +13,12 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [ChecklistBuilderComponent,
                   QuestionListComponent],
-  imports: [NgbModule, MatTabsModule, MaterialModule, MatFormFieldModule, FormsModule, CommonModule, ReactiveFormsModule]
+  imports: [NgbModule,
+            MatTabsModule,
+            MaterialModule,
+            MatFormFieldModule,
+            FormsModule,
+            CommonModule,
+            ReactiveFormsModule]
 })
 export class ChecklistBuilderModule {}
