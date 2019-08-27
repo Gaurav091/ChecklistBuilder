@@ -85,7 +85,7 @@ changeTab(questionType) {
   }
   copyControl(c: ControlInfo) {
     console.log(c);
-    const c1: ControlInfo = new ControlInfo(c.controlType, c.label);
+    const c1: ControlInfo = new ControlInfo(c.controlType, '');
     if (c.controlType === 4) {
       c1.items = [];
       // c1.items.push(new SelectListItem('', '', false));
@@ -100,7 +100,7 @@ changeTab(questionType) {
   }
   copyItem(c: ControlInfo, item: SelectListItem) {
     console.log(item);
-    const item1: SelectListItem = new SelectListItem(item.text, item.value, item.isSelected);
+    const item1: SelectListItem = new SelectListItem('', item.value, item.isSelected);
     c.items.push(item1);
   }
   deleteItem(c: ControlInfo, j) {

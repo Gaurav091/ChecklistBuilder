@@ -19,21 +19,21 @@
           <label> {{q.questionText}}<span *ngIf="q.isRequired" style="color: red">*</span></label>
           <div *ngFor="let c of q.controls">
 
-            <input *ngIf="c.controlType == 1" type="checkbox">
-            <input *ngIf="c.controlType == 2" class="form-control" type="textbox">
-            <input *ngIf="c.controlType == 3" type="radio">
+            <input  disabled='disabled' *ngIf="c.controlType == 1" type="checkbox">
+            <input  disabled='disabled' *ngIf="c.controlType == 2" class="form-control" type="textbox">
+            <input  disabled='disabled' *ngIf="c.controlType == 3" type="radio">
             <select class="form-control" *ngIf="c.controlType == 4">
               <option value="item.value" *ngFor="let item of c.items">{{item.text}}</option>
             </select>
-            <div *ngIf="c.controlType == 5" class="input-group">
-              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker">
+            <div  disabled='disabled' *ngIf="c.controlType == 5" class="input-group">
+              <input  disabled='disabled' class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
               </div>
             </div>
-            <input *ngIf="c.controlType == 6" type="text" value="" class="form-control" type="file">
-            <input *ngIf="c.controlType == 7" type="text" value="" class="form-control" type="number">
-            <textarea *ngIf="c.controlType == 8" value="" class="form-control"></textarea>
+            <input  disabled='disabled' *ngIf="c.controlType == 6" type="text" value="" class="form-control" type="file">
+            <input  disabled='disabled' *ngIf="c.controlType == 7" type="text" value="" class="form-control" type="number">
+            <textarea  disabled='disabled' *ngIf="c.controlType == 8" value="" class="form-control"></textarea>
             <div *ngIf="c.controlType == 9">
               <input type="text" value="" class="form-control" type="file">
               <ul>
