@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading" style="font-size: 18px;">Questions</div>
-  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" class="panel-body">
+  <div cdkDropList class="question-list" (cdkDropListDropped)="drop($event)" class="panel-body">
     <div class="questionStyles row" (click)="editQuestion(q)" *ngFor="let q of questions; let i = index"
     cdkDrag style="border: 1px solid gray; padding: 5px; margin-bottom: 5px;">
       <div id="i">

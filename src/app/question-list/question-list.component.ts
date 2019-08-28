@@ -74,6 +74,7 @@ export class QuestionListComponent implements OnInit {
   ngOnInit() {
     console.log(this.questions);
   }
+
   drop(event: CdkDragDrop<string[]>) {
     // moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
     moveItemInArray(this.questions , event.previousIndex, event.currentIndex);
@@ -84,7 +85,7 @@ export class QuestionListComponent implements OnInit {
   }
 
   copyQuestion(q: Question) {
-    let tempQ = new Question();
+    const tempQ = new Question();
     tempQ.setData(q);
     tempQ.id = Math.random();
     APC.questions.unshift(tempQ);
