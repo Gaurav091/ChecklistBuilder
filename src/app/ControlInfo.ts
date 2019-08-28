@@ -2,6 +2,7 @@ export class ControlInfo {
     constructor(controlType: number, label: string) {
         this.controlType = controlType;
         this.label = label;
+        this.items = [];
     }
     controlType: number;
     label: string;
@@ -11,12 +12,12 @@ export class ControlInfo {
     }
 }
 export class SelectListItem{
-    constructor(text:string, value:string,isSelected:boolean){
+    constructor(text: string, value: string,isSelected: boolean){
         this.text = text;
         this.value = value;
         this.isSelected = isSelected;
     }
-    text:string;
-    value:string;
-    isSelected:boolean;
+    text: string;
+    value: string;
+    isSelected: boolean;
 }

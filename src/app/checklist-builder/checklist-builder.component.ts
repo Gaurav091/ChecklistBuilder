@@ -13,6 +13,7 @@ import { ControlInfo, SelectListItem } from '../controlInfo';
 import { MatTabChangeEvent } from '@angular/material';
 
 
+
 @Component({
   selector: 'app-checklist-builder',
   templateUrl: './checklist-builder.component.html',
@@ -33,6 +34,7 @@ export class ChecklistBuilderComponent implements OnInit {
   ngOnInit() {
     // this.buildForm();
     this.question.controls = [];
+    this.question.questionType = -1;
   }
 
   // buildForm() {
@@ -63,16 +65,14 @@ changeTab(questionType) {
   // this.selected.setValue(this.selected.value + 1);
   this.tabIndex += 1;
   this.question.questionType = questionType;
+  // this.question.questionType = -1;
   console.log( this.question.questionType);
   if ( this.question.questionType) {
     this.question.controls = [];
     this.question.controls.push(new ControlInfo( this.question.questionType, ''));
     this.buttonType = 1 ;
-    // if (this.selectedQues == 4) {
-    //   this.question.controls[0].items = [];
-    //   this.question.controls[0].items.push(new SelectListItem('', '', false));
-    // }
   }
+
   console.log(this.question);
   console.log( this.question.questionType);
 }
@@ -120,10 +120,7 @@ changeTab(questionType) {
       if ( this.question.questionType) {
         this.question.controls = [];
         this.question.controls.push(new ControlInfo( this.question.questionType, ''));
-        // if (this.selectedQues == 4) {
-        //   this.question.controls[0].items = [];
-        //   this.question.controls[0].items.push(new SelectListItem('', '', false));
-        // }
+        console.log(this.question.controls);
       }
     }
 
