@@ -76,7 +76,6 @@ export class QuestionListComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    // moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
     moveItemInArray(this.questions , event.previousIndex, event.currentIndex);
   }
 
