@@ -93,6 +93,12 @@ export class QuestionListComponent implements OnInit {
     });
 
   }
+  scrollToTop() {
+    window.requestAnimationFrame(() => {
+    scrollTo(0, 0);
+  });
+  }
+
   deleteQuestion(i) {
     // alert('delete index' + i);
     APC.questions.splice(i, 1);

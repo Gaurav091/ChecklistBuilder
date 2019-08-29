@@ -1,71 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl,
-  AbstractControl
-} from '@angular/forms';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import * as APC from '../appConstant';
 import { Question } from '../Question';
 import { ControlInfo, SelectListItem } from '../controlInfo';
 import { MatTabChangeEvent } from '@angular/material';
-
-
-
 @Component({
   selector: 'app-checklist-builder',
   templateUrl: './checklist-builder.component.html',
   styleUrls: ['./checklist-builder.component.css']
 })
 export class ChecklistBuilderComponent implements OnInit {
-  // questionForm: FormGroup;
-  // selectedIndex: number;
-  // selected = new FormControl(0);
   tabIndex = 0;
   buttonType = 1;
-  // selectedQues: any;
   question: Question = new Question();
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
   }
 
   ngOnInit() {
-    // this.buildForm();
     this.question.controls = [];
-    this.question.questionType = -1;
+    this.question.questionType = 0;
   }
 
-  // buildForm() {
-  //   this.questionForm = this.fb.group({
-  //     // paragraphText: new FormControl(''),
-  //     // radioButton: new FormControl(''),
-  //     // fileAttach: new FormControl(''),
-  //     // singleLineText: new FormControl(''),
-  //     // checkbox: new FormControl(''),
-  //     // dropdown: new FormControl(''),
-  //     // calander: new FormControl(''),
-  //     // number: new FormControl(''),
-  //     // termsAndAcknowledge: new FormControl(''),
-  //      questionText: new FormControl(''),
-  //      cLabel : new FormControl(''),
-  //     // questionControl: new FormControl(''),
-  //     required: new FormControl('')
-  //   });
-  // }
-
-
-  public tabChanged(tabChangeEvent: MatTabChangeEvent): void {
+ public tabChanged(tabChangeEvent: MatTabChangeEvent): void {
     this.tabIndex = tabChangeEvent.index;
 }
 
-
 changeTab(questionType) {
-  // this.selected.setValue(this.selected.value + 1);
   this.tabIndex += 1;
   this.question.questionType = questionType;
-  // this.question.questionType = -1;
   console.log( this.question.questionType);
   if ( this.question.questionType) {
     this.question.controls = [];
