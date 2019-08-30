@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Question } from '../Question';
 import { ControlInfo, SelectListItem } from '../controlInfo';
 import * as APC from '../appConstant';
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-question-list',
@@ -76,7 +76,7 @@ export class QuestionListComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.questions , event.previousIndex, event.currentIndex);
+    moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
   }
 
   editQuestion(q: Question) {
@@ -91,12 +91,11 @@ export class QuestionListComponent implements OnInit {
     window.requestAnimationFrame(() => {
       scrollTo(0, 0);
     });
-
   }
   scrollToTop() {
     window.requestAnimationFrame(() => {
-    scrollTo(0, 0);
-  });
+      scrollTo(0, 0);
+    });
   }
 
   deleteQuestion(i) {

@@ -1,6 +1,12 @@
 <div>
   <h3>CheckList Builder</h3>
-  <div  class="col-lg-4">
+  <div style="margin: 4%">
+    <button type="button" class="btn btn-warning"> Save</button>
+    <button type="button" class="btn btn-warning"> Select from Question Bank</button>
+    <button type="button" class="btn btn-warning"> Select from Templates</button>
+  </div>
+  <div>
+    <div  class="col-lg-4">
     <mat-tab-group [(selectedIndex)]="tabIndex"  (selectedTabChange)="tabChanged($event)">
       <mat-tab label="Question Type">
         <div>
@@ -136,4 +142,6 @@
   <div class="col-lg-8">
     <app-question-list (updateQuestionEvent) = "populateQuestion($event)"></app-question-list>
   </div>
+  </div>
+
 </div>

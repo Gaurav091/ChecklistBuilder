@@ -1,31 +1,53 @@
 <!-- <p>add-checklist-template works!</p> -->
 
-  <h3>Add CheckList Template</h3>
-  <div class="addCheckList" >
-    <div class="col-md-6">
-      <div class="input-group">
-        <span class="input-group-addon">
-          Template Name
-        </span>
-        <input type="text" class="form-control" aria-label="..." placeholder="Checklist for Client 1">
-      </div>
+<h3>Add CheckList Template</h3>
+<div class="addCheckList">
+  <div class="col-md-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        Template Name
+      </span>
+      <input type="text" class="form-control" aria-label="..." placeholder="Checklist for Client 1">
     </div>
-    <div class="col-md-6">
-      <div class="input-group">
-        <span class="input-group-addon">
-          Work Type
-        </span>
-          <select name="workType" class="form-control">
-            <option value="1">Energy Management</option>
-            <option value="2">Inspection</option>
-            <option value="3">Natural Disaster</option>
-            <option value="4">Storage Solution</option>
-            <option value="5">Winter Storm</option>
-            <option value="6">PM</option>
-          </select>
-      </div>
+    <div class="input-group" style="margin-top: 3%">
+      <span class="input-group-addon">Description</span>
+      <textarea class="form-control" rows="4" cols="50" name="description">
+            Description about the template creation</textarea>
+    </div>
+    <div>
+      <input type="checkbox">Include Master Checklist
     </div>
   </div>
-
-
-
+  <div class="col-md-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        Work Type
+      </span>
+      <select name="workType" class="form-control">
+        <option value="1">Energy Management</option>
+        <option value="2">Inspection</option>
+        <option value="3">Natural Disaster</option>
+        <option value="4">Storage Solution</option>
+        <option value="5">Winter Storm</option>
+        <option value="6">PM</option>
+      </select>
+    </div>
+    <div class="input-group" style="margin-top: 3%">
+      <span class="input-group-addon">
+        Tagging
+      </span>
+      <select name="tagging" class="form-control">
+        <option value="1">Select Tag</option>
+        <option value="2">Electric</option>
+        <option value="3">Plubming</option>
+        <option value="4">Storage Solution</option>
+        <option value="5">Winter Storm</option>
+      </select>
+    </div>
+    <div style="margin-top: 10%">
+      <button style="margin-right: 1%" type="button" class="btn btn-warning">Build CheckList</button>
+      <button style="margin-right: 1%" type="button" class="btn btn-warning">Save</button>
+      <button style="margin-right: 1%" type="button" class="btn btn-warning"> Cancel</button>
+    </div>
+  </div>
+</div>

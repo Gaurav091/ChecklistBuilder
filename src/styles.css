@@ -6,7 +6,7 @@
   border: 1px solid;
   padding-top: 3%;
   margin: 1%;
-  padding-bottom: 5%;
+  padding-bottom: 14%;
 }
 
 /* .mat-tab-header-pagination.mat-tab-header-pagination-disabled {
@@ -21,6 +21,11 @@
 
 .mat-tab-body-content {
   overflow: hidden !important;
+}
+table.mat-table {
+  border-spacing: 0;
+  width: 98%;
+  margin-left: 1%;
 }
 
 .createButton {

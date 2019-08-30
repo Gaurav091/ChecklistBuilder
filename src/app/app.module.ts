@@ -13,13 +13,15 @@ import {MaterialModule} from './material-module';
 import { AddChecklistTemplateComponent } from './add-checklist-template/add-checklist-template.component';
 import { ChecklistBuilderComponent } from './checklist-builder/checklist-builder.component';
 import { QuestionListComponent } from './question-list/question-list.component';
+import { ChecklistQuestionBankComponent } from './checklist-question-bank/checklist-question-bank.component';
 
 @NgModule({
   declarations: [
     AppComponent,
      AddChecklistTemplateComponent,
      ChecklistBuilderComponent,
-     QuestionListComponent
+     QuestionListComponent,
+     ChecklistQuestionBankComponent
   ],
   imports: [
     BrowserModule,
