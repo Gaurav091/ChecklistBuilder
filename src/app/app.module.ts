@@ -16,6 +16,7 @@ import { QuestionListComponent } from './question-list/question-list.component';
 import { ChecklistQuestionBankComponent } from './checklist-question-bank/checklist-question-bank.component';
 import { TemplateQuestionBankComponent } from './template-question-bank/template-question-bank.component';
 import { ChecklistMappingComponent } from './checklist-mapping/checklist-mapping.component';
+import { ApiPocComponent } from './api-poc/api-poc.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ChecklistMappingComponent } from './checklist-mapping/checklist-mapping
      QuestionListComponent,
      ChecklistQuestionBankComponent,
      TemplateQuestionBankComponent,
-     ChecklistMappingComponent
+     ChecklistMappingComponent,
+     ApiPocComponent
   ],
   imports: [
     BrowserModule,
