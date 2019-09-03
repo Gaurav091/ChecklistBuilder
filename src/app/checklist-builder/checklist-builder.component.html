@@ -1,11 +1,11 @@
 <div>
   <h3>CheckList Builder</h3>
-  <div style="margin: 4%">
-    <button type="button" class="btn btn-warning"> Save</button>
-    <button type="button" class="btn btn-warning"> Select from Question Bank</button>
-    <button type="button" class="btn btn-warning"> Select from Templates</button>
+  <div style="margin: 4%;">
+    <button type="button" class="btn btn-warning btn-space"> Save</button>
+    <button type="button" class="btn btn-warning btn-space"> Select from Question Bank</button>
+    <button type="button" class="btn btn-warning btn-space"> Select from Templates</button>
   </div>
-  <div>
+  <div style="margin-top: 10%">
     <div  class="col-lg-4">
     <mat-tab-group [(selectedIndex)]="tabIndex"  (selectedTabChange)="tabChanged($event)">
       <mat-tab label="Question Type">

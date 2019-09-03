@@ -1,0 +1,49 @@
+<div style="margin-top: 28%;margin-left: 10%">
+  <h3>CheckList Mapping</h3>
+  <div style="margin-left: 30%">
+    <input type="checkbox">Applicable for future request type and request code
+    <button style="margin-left: 10%" type="button" class="btn btn-warning"> Save</button>
+  </div>
+  <div class="checkList-table">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="requestTypeChecked">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox aria-label="Select All" [checked]="allRequestTypesSelected" [indeterminate]="allRequestTypesIndeterminate"
+            (change)="toggleSelectAllRequestTypes($event)">
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-checkbox [checked]="element.isRequestTypeChecked" (change)="requestTypeChanged(element,$event)"
+            [(ngModel)]="element.isRequestTypeChecked"></mat-checkbox>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="requestType">
+        <th mat-header-cell *matHeaderCellDef> Request Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.requestType}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="requestCodeChecked">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox aria-label="Select All" [checked]="allRequestCodesSelected" [indeterminate]="allRequestCodesIndeterminate"
+            (change)="toggleSelectAllRequestCodes($event)">
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-checkbox [checked]="element.isRequestCodeChecked" (change)="requestCodeChanged(element,$event)"
+            [(ngModel)]="element.isRequestCodeChecked"></mat-checkbox>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="requestCode">
+        <th mat-header-cell *matHeaderCellDef> Request Code </th>
+        <td mat-cell *matCellDef="let element"> {{element.requestCode}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+</div>

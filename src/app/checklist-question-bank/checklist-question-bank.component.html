@@ -1,4 +1,4 @@
-<div style="margin-top: 19%">
+<div style="margin-top: 28%">
   <h1>Checklist Question Bank</h1>
 </div>
 <div style="width: 100%">
@@ -8,8 +8,8 @@
     </mat-form-field>
   </div>
   <div class="col-md-4">
-    <button style="margin-right: 1%" type="button" class="btn btn-warning">Attach to template</button>
-    <button style="margin-right: 1%" type="button" class="btn btn-warning">Cancel</button>
+    <button type="button" class="btn btn-warning btn-space">Attach to template</button>
+    <button type="button" class="btn btn-warning btn-space">Cancel</button>
   </div>
 </div>
 <!-- <mat-form-field>
@@ -25,7 +25,6 @@
              <mat-checkbox  aria-label="Select All" [checked]="allSelected" [indeterminate]="indeterminate" (change)="toggleSelectAll($event)">
               </mat-checkbox>Check All
            </th>
-           <!-- <th mat-header-cell *matHeaderCellDef>Check</th> -->
 
             <td mat-cell *matCellDef="let element">
               <mat-checkbox [checked]="element.isChecked" (change)="itemChanged(element,$event)" [(ngModel)]="element.checked"></mat-checkbox>

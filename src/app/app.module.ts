@@ -14,6 +14,8 @@ import { AddChecklistTemplateComponent } from './add-checklist-template/add-chec
 import { ChecklistBuilderComponent } from './checklist-builder/checklist-builder.component';
 import { QuestionListComponent } from './question-list/question-list.component';
 import { ChecklistQuestionBankComponent } from './checklist-question-bank/checklist-question-bank.component';
+import { TemplateQuestionBankComponent } from './template-question-bank/template-question-bank.component';
+import { ChecklistMappingComponent } from './checklist-mapping/checklist-mapping.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ChecklistQuestionBankComponent } from './checklist-question-bank/checkl
      AddChecklistTemplateComponent,
      ChecklistBuilderComponent,
      QuestionListComponent,
-     ChecklistQuestionBankComponent
+     ChecklistQuestionBankComponent,
+     TemplateQuestionBankComponent,
+     ChecklistMappingComponent
   ],
   imports: [
     BrowserModule,
