@@ -17,6 +17,8 @@ import { ChecklistQuestionBankComponent } from './checklist-question-bank/checkl
 import { TemplateQuestionBankComponent } from './template-question-bank/template-question-bank.component';
 import { ChecklistMappingComponent } from './checklist-mapping/checklist-mapping.component';
 import { ApiPocComponent } from './api-poc/api-poc.component';
+import { ChecklistService } from './shared/checklist.service';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,7 @@ import { ApiPocComponent } from './api-poc/api-poc.component';
     MatNativeDateModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ChecklistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
