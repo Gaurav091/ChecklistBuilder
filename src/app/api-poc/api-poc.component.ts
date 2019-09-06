@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { ChecklistService } from '../shared/checklist.service';
 
 export interface PeriodicElement {
@@ -23,14 +23,13 @@ export interface PostElement {
   selector: 'app-api-poc',
   templateUrl: './api-poc.component.html',
   styleUrls: ['./api-poc.component.css'],
-  providers: [ChecklistService]
 })
 export class ApiPocComponent implements OnInit {
   public allSelected = false;
   public indeterminate = false;
   public posts: PostElement[] = [];
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
   constructor(private checklistService: ChecklistService) {
   }
 
@@ -44,6 +43,11 @@ export class ApiPocComponent implements OnInit {
       this.posts.push(...response.data);
       this.dataSource.data = this.posts;
     });
+    // this.checklistService.getPostsFromHttp().subscribe((response) => {
+    //   this.posts.push(...response);
+    //   this.dataSource.data = this.posts;
+    //   console.log(this.posts);
+    // });
   }
 
   applyFilter(filterValue: string) {

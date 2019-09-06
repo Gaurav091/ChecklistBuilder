@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// import { AddChecklistTemplateComponent } from './add-checklist-template/add-checklist-template.component';
-// import { ChecklistBuilderComponent } from './checklist-builder/checklist-builder.component';
+import { ApiPocComponent } from './api-poc/api-poc.component';
+import { ChecklistMappingComponent } from './checklist-mapping/checklist-mapping.component';
 
 
 const routes: Routes = [
  // { path: '**', pathMatch: 'full', component:  }
+ { path: 'apiPoc', component: ApiPocComponent },
+ { path: 'checklistMapping', component: ChecklistMappingComponent }
 ];
 
 @NgModule({
@@ -13,3 +15,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents = [ApiPocComponent , ChecklistMappingComponent];
